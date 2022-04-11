@@ -1,32 +1,21 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Country from './Country';
+import { getCountries } from '../../redux/countries/countries';
 
 const Countries = () => {
-  const counties = [
-    {
-      id: 1,
-      name: 'Brazil',
-      totalNewDeaths: 50,
-      totalNewCases: 200,
-    },
-    {
-      id: 2,
-      name: 'Argentina',
-      totalNewDeaths: 70,
-      totalNewCases: 300,
-    },
-    {
-      id: 3,
-      name: 'Angola',
-      totalNewDeaths: 10,
-      totalNewCases: 100,
-    },
-  ];
+  const countries = useSelector((state) => state.countries);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, []);
 
   return (
     <>
       <h2>Orded by Total Deaths</h2>
       <ul className="cards">
-        {counties.map((country) => (
+        {countries.map((country) => (
           <Country key={country.id} data={country} />
         ))}
       </ul>
