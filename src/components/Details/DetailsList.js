@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { fetchDetails } from '../../redux/details/details';
 
 const DetailsList = ({ name }) => {
@@ -45,9 +46,10 @@ const DetailsList = ({ name }) => {
   }, [selectedCountry]);
 
   const details = useSelector((state) => state.details);
-
+  const navigate = useNavigate();
   return (
     <>
+      <button type="button" className="previous-page" onClick={() => navigate(-1)}>Previous Page</button>
       {Object.keys(details).length !== 0 && (
         <ul className="data-details">
           {list.map((item) => (

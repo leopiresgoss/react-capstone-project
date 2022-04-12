@@ -6,7 +6,7 @@ const Country = (props) => {
     name, totalNewDeaths, totalNewCases,
   } = data;
 
-  const href = `/#/details/${name}`;
+  const href = `/details/${name}`;
 
   return (
     <li className="card">
