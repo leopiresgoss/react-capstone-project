@@ -1,22 +1,25 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Country from './Country';
-import { getCountries } from '../../redux/countries/countries';
+import Filter from './Filter';
 
 const Countries = () => {
-  const countries = useSelector((state) => state.countries);
-  const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const { countries, listFilter } = useSelector((state) => state);
 
-  useEffect(() => {
-    dispatch(getCountries());
-  }, []);
+  if (listFilter.filter === 'deaths') {
+    countries.sort((a, b) => b.totalNewDeaths - a.totalNewDeaths);
+  }
+
+  if (listFilter.filter === 'cases') {
+    countries.sort((a, b) => b.totalNewCases - a.totalNewCases);
+  }
 
   return (
     <>
-      <h2>Orded by Total Deaths</h2>
+      <Filter />
       <ul className="cards">
         {countries.map((country) => (
-          <Country key={country.id} data={country} />
+          <Country key={country.id} data={country} filter={listFilter.filter} />
         ))}
       </ul>
     </>
