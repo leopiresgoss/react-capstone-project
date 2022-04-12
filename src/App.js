@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 import { getCountries } from './redux/countries/countries';
 import Homepage from './pages/Homepage';
+import Details from './pages/Details';
 
 function App() {
   const dispatch = useDispatch();
@@ -12,7 +14,10 @@ function App() {
 
   return (
     <div className="App">
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/details/:id" element={<Details />} />
+      </Routes>
     </div>
   );
 }

@@ -2,10 +2,15 @@ import PropTypes from 'prop-types';
 
 const Country = (props) => {
   const { data, filter } = props;
-  const { name, totalNewDeaths, totalNewCases } = data;
+  const {
+    id, name, totalNewDeaths, totalNewCases,
+  } = data;
+
+  const href = `/#/details/${id}`;
+
   return (
     <li className="card">
-      <a className="details-link" href="/">More Info</a>
+      <a className="details-link" href={href}>More Info</a>
       <h3>{name}</h3>
 
       {filter === 'deaths' && (
@@ -30,6 +35,7 @@ const Country = (props) => {
 
 Country.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.number,
     name: PropTypes.string,
     totalNewDeaths: PropTypes.number,
     totalNewCases: PropTypes.number,
