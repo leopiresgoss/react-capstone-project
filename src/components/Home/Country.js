@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const Country = (props) => {
-  const { data, filter } = props;
+  const { data, order } = props;
   const {
     name, totalNewDeaths, totalNewCases,
   } = data;
@@ -13,7 +13,7 @@ const Country = (props) => {
       <a className="details-link" href={href}>More Info</a>
       <h3>{name}</h3>
 
-      {filter === 'deaths' && (
+      {order === 'deaths' && (
         <p>
           Today&apos;s Deaths:
           {' '}
@@ -21,7 +21,7 @@ const Country = (props) => {
         </p>
       )}
 
-      {filter === 'cases' && (
+      {order === 'cases' && (
       <p>
         Today&apos;s New Cases:
         {' '}
@@ -39,7 +39,7 @@ Country.propTypes = {
     totalNewDeaths: PropTypes.number,
     totalNewCases: PropTypes.number,
   }).isRequired,
-  filter: PropTypes.string.isRequired,
+  order: PropTypes.string.isRequired,
 };
 
 export default Country;

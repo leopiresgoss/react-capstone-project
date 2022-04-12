@@ -1,11 +1,10 @@
-// import { useDispatch } from 'react-redux';
-// import
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
-import { filterByCases, filterByDeaths } from '../../redux/filter/filter';
+import { orderByCases, orderByDeaths } from '../../redux/countries/countries';
 
-const Filter = () => {
+const Order = ({ handleListChange }) => {
   const [selectedValue, setSelectedValue] = useState('deaths');
   const dispatch = useDispatch();
 
@@ -26,11 +25,13 @@ const Filter = () => {
     setSelectedValue(e.value);
 
     if (e.value === 'cases') {
-      dispatch(filterByCases());
+      dispatch(orderByCases());
     }
     if (e.value === 'deaths') {
-      dispatch(filterByDeaths());
+      dispatch(orderByDeaths());
     }
+
+    handleListChange(e.value);
   };
 
   return (
@@ -46,4 +47,8 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+Order.propTypes = {
+  handleListChange: PropTypes.func.isRequired,
+};
+
+export default Order;

@@ -11,7 +11,7 @@ export default function fetchCountriesData() {
         return Object.keys(countries).map((key, index) => ({
           id: index,
           name: countries[key].name,
-          totalNewDeaths: countries[key].today_deaths,
+          totalNewDeaths: countries[key].today_new_deaths,
           totalNewCases: countries[key].today_new_confirmed,
           moreInfoLink: countries[key].links[0].href,
         }));
