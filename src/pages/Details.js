@@ -2,16 +2,16 @@ import { useParams } from 'react-router-dom';
 import DetailsList from '../components/Details/DetailsList';
 
 const Details = () => {
-  const { id } = useParams();
+  const { name } = useParams();
 
   return (
     <div className="details container-fluid">
       <h2>
         Details
         {' '}
-        {id}
+        {name}
       </h2>
-      <DetailsList id={id} />
+      <DetailsList name={name} />
     </div>
   );
 };
