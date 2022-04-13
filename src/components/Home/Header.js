@@ -9,11 +9,15 @@ const Header = ({ countries }) => {
   };
 
   return (
-    <header className="d-flex align-center justify-content-center">
+    <header className="d-flex align-center justify-content-center p-4">
       <img src={worldMap} alt="world map" style={style.imgStyle} />
-      <div className="d-grid align-content-center h6">
-        <h6 className="text-white">Countries found:</h6>
-        <p className="text-white text-end">{countries.length}</p>
+      <div className="d-grid align-content-center m-0">
+        <h2 className="text-white fw-bold text-start">Stats</h2>
+        <p className="text-white text-start">
+          {countries.length}
+          {' '}
+          countries
+        </p>
       </div>
     </header>
   );

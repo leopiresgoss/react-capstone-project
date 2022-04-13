@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: local('GILLSANS'),
+    url('./fonts/GILLSANS.ttf') format('truetype');
+  font-weight: normal;
+}
+
 * {
   margin: 0;
   border: 0;
@@ -17,8 +26,13 @@ a {
 }
 
 body {
+  font-family: 'Gill Sans', sans-serif !important;
   min-height: 100vh;
   background-color: var(--badge-light-blue) !important;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
 }
 
 .background-light-blue {

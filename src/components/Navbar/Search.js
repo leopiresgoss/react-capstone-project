@@ -11,7 +11,7 @@ const Search = () => {
   return (
     <div className="search-bar">
       <input
-        className="bg-transparent text-white"
+        className="bg-transparent text-white font-lato"
         name="search-input"
         id="search-input"
         placeholder="Search Country"

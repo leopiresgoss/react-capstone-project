@@ -52,14 +52,16 @@ const DetailsList = ({ name }) => {
       {Object.keys(details).length !== 0 && (
         <ul className="data-details p-0 m-0">
           {list.map((item) => (
-            <li key={item.id} className="card rounded-0 d-flex flex-row justify-content-between p-4">
+            <li key={item.id} className="card rounded-0 d-flex flex-row justify-content-between p-4 text-white">
               <p className="m-0 text-white">
                 {item.title}
-                :
-                {' '}
-                {details[item.value]}
               </p>
-              <ArrowIcon />
+              <div className="d-flex gap-1 align-center">
+                {details[item.value]}
+                <div className="d-grid align-content-center">
+                  <ArrowIcon />
+                </div>
+              </div>
             </li>
           ))}
         </ul>

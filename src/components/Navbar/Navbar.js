@@ -30,9 +30,8 @@ const Nav = () => {
         <Search />
       )}
       {pathname !== '/' && (
-        <h6 className="text-white m-0">
+        <h6 className="text-white m-0 font-lato">
           {countryName}
-          /stats
         </h6>
       )}
       <div className="moreButtons m-0 previous-page bg-transparent text-white h6 align-center d-flex gap-4">

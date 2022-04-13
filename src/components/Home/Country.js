@@ -14,34 +14,28 @@ const Country = (props) => {
   return (
     <li className="card">
       <Link to={href} className="text-white">
-        <div className="text-end">
+        <div className="text-end mb-3">
           <ArrowIcon />
         </div>
-        <h3>
+        <h3 className="font-lato fw-bold text-end mt-5">
           {index}
           {'- '}
           {name}
         </h3>
         {order === 'deaths' && (
-        <p>
-          Today&apos;s Deaths:
-          {' '}
+        <p className="text-end">
           {totalNewDeaths}
         </p>
         )}
 
         {order === 'cases' && (
         <p>
-          Today&apos;s New Cases:
-          {' '}
           {totalNewCases}
         </p>
         )}
 
         {order === 'filter' && (
         <p>
-          Today&apos;s Deaths:
-          {' '}
           {totalNewDeaths}
         </p>
         )}
