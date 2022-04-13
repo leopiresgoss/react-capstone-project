@@ -1,0 +1,14 @@
+/* --card-dark-blue: #3d63a4;
+--card-light-blue: #4268af; */
+
+.data-details li {
+  list-style: none;
+}
+
+.data-details li:nth-child(odd) {
+  background-color: var(--card-dark-blue);
+}
+
+.data-details li:nth-child(even) {
+  background-color: var(--card-light-blue);
+}

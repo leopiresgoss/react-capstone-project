@@ -39,14 +39,41 @@ const Order = (props) => {
     setSelectedValue('deaths');
   }
 
+  const selectStyle = {
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: '#2e4475',
+      border: 'none',
+      minHeight: '0',
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      paddingTop: '0',
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: '#fff',
+    }),
+    indicatorSeparator: (provided) => ({
+      ...provided,
+      display: 'none',
+    }),
+    dropdownIndicator: (provided) => ({
+      ...provided,
+      padding: '0',
+    }),
+  };
+
   return (
-    <div className="filter-box">
-      <h6>Order by:</h6>
+    <div className="filter-box d-flex gap-1 background-dark-blue align-center px-4 py-1">
+      <h6 className="d-grid align-content-center text-white m-0 font-lato fw-bold">ORDER BY</h6>
       <Select
         placeholder="Order by"
         value={options.find((option) => option.value === selectedValue)}
         options={options}
         onChange={handleChange}
+        className="bg-transparent font-lato fw-bold"
+        styles={selectStyle}
       />
     </div>
   );

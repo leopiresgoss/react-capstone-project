@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import { fetchDetails } from '../../redux/details/details';
+import ArrowIcon from '../Home/ArrowIcon';
+import './details.css';
 
 const DetailsList = ({ name }) => {
   const dispatch = useDispatch();
@@ -46,20 +47,21 @@ const DetailsList = ({ name }) => {
   }, [selectedCountry]);
 
   const details = useSelector((state) => state.details);
-  const navigate = useNavigate();
   return (
     <>
-      <button type="button" className="previous-page" onClick={() => navigate(-1)}>Previous Page</button>
       {Object.keys(details).length !== 0 && (
-        <ul className="data-details">
+        <ul className="data-details p-0 m-0">
           {list.map((item) => (
-            <li key={item.id}>
-              <p>
+            <li key={item.id} className="card rounded-0 d-flex flex-row justify-content-between p-4 text-white">
+              <p className="m-0 text-white">
                 {item.title}
-                :
-                {' '}
-                {details[item.value]}
               </p>
+              <div className="d-flex gap-1 align-center">
+                {details[item.value]}
+                <div className="d-grid align-content-center">
+                  <ArrowIcon />
+                </div>
+              </div>
             </li>
           ))}
         </ul>

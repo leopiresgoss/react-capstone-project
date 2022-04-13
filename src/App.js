@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getCountries } from './redux/countries/countries';
 import Homepage from './pages/Homepage';
 import Details from './pages/Details';
+import Nav from './components/Navbar/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/details/:name" element={<Details />} />

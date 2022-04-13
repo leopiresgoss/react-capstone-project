@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Country from './Country';
 import Order from './Order';
-import Search from './Search';
+import Header from './Header';
 import { orderByDeaths } from '../../redux/countries/countries';
+import { clearSearch } from '../../redux/search/search';
+import './countries.css';
 
 const Countries = () => {
   const dispatch = useDispatch();
-  const { countries } = useSelector((state) => state);
+  const { countries, search } = useSelector((state) => state);
   const [order, changeOrder] = useState('deaths');
   const [filteredCountries, setFilteredCountries] = useState([]);
 
@@ -28,19 +30,32 @@ const Countries = () => {
       setFilteredCountries([]);
       changeOrder('deaths');
       dispatch(orderByDeaths());
+      dispatch(clearSearch());
     }
   };
 
+  useEffect(() => filterSearched(search), [search]);
+
   return (
     <>
-      <Search filterSearched={filterSearched} />
+      <Header countries={countries} />
       <Order handleListChange={handleListChange} order={order} />
       <ul className="cards">
-        {filteredCountries.length === 0 && (countries.map((country) => (
-          <Country key={country.id} data={country} order={order} />
+        {filteredCountries.length === 0 && (countries.map((country, index) => (
+          <Country
+            key={country.id}
+            data={country}
+            order={order}
+            index={index + 1}
+          />
         )))}
-        {filteredCountries.length !== 0 && (filteredCountries.map((country) => (
-          <Country key={country.id} data={country} order={order} />
+        {filteredCountries.length !== 0 && (filteredCountries.map((country, index) => (
+          <Country
+            key={country.id}
+            data={country}
+            order={order}
+            index={index + 1}
+          />
         )))}
       </ul>
     </>

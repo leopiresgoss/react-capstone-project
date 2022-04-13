@@ -1,0 +1,5 @@
+#search-input::placeholder {
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+}

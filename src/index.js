@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import './fonts/GILLSANS.ttf';
+import './images/covid-img-mobile.png';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 ReactDOM.render(
   <React.StrictMode>
