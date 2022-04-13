@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Country from './Country';
 import Order from './Order';
+import Header from './Header';
 import { orderByDeaths } from '../../redux/countries/countries';
 import { clearSearch } from '../../redux/search/search';
 
@@ -36,6 +37,7 @@ const Countries = () => {
 
   return (
     <>
+      <Header countries={countries} />
       <Order handleListChange={handleListChange} order={order} />
       <ul className="cards">
         {filteredCountries.length === 0 && (countries.map((country) => (

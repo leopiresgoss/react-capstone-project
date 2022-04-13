@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --badge-light-blue: #5889e5;
+}
+
 body {
   min-height: 100vh;
+  background-color: var(--badge-light-blue) !important;
+}
+
+.background-light-blue {
+  background-color: var(--badge-light-blue);
 }
