@@ -29,6 +29,14 @@ const Country = (props) => {
       </p>
       )}
 
+      {order === 'filter' && (
+      <p>
+        Today&apos;s Deaths:
+        {' '}
+        {totalNewDeaths}
+      </p>
+      )}
+
     </li>
   );
 };

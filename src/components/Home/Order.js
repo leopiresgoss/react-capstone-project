@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 import { orderByCases, orderByDeaths } from '../../redux/countries/countries';
 
-const Order = ({ handleListChange }) => {
+const Order = (props) => {
+  const { handleListChange, order } = props;
   const [selectedValue, setSelectedValue] = useState('deaths');
   const dispatch = useDispatch();
 
@@ -34,6 +35,10 @@ const Order = ({ handleListChange }) => {
     handleListChange(e.value);
   };
 
+  if (order === 'filter' && selectedValue === 'cases') {
+    setSelectedValue('deaths');
+  }
+
   return (
     <div className="filter-box">
       <h6>Order by:</h6>
@@ -49,6 +54,7 @@ const Order = ({ handleListChange }) => {
 
 Order.propTypes = {
   handleListChange: PropTypes.func.isRequired,
+  order: PropTypes.string.isRequired,
 };
 
 export default Order;
