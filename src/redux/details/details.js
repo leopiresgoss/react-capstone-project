@@ -1,7 +1,7 @@
 import fetchDetailsData from '../../services/fetchDetailsData';
 
 // Actions
-const GET_DETAILS = 'GET_DETAILS';
+export const GET_DETAILS = 'GET_DETAILS';
 // Reducer
 export default function reducer(state = {}, action) {
   switch (action.type) {
