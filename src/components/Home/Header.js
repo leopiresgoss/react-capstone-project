@@ -12,8 +12,8 @@ const Header = ({ countries }) => {
     <header className="d-flex align-center justify-content-center">
       <img src={worldMap} alt="world map" style={style.imgStyle} />
       <div className="d-grid align-content-center h6">
-        <h6>Countries found:</h6>
-        <p className="text-end">{countries.length}</p>
+        <h6 className="text-white">Countries found:</h6>
+        <p className="text-white text-end">{countries.length}</p>
       </div>
     </header>
   );

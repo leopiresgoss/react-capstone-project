@@ -2,11 +2,12 @@
   margin: 0;
   border: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;;
 }
 
 :root {
   --badge-light-blue: #5889e5;
+  --badge-dark-blue: #2e4475;
 }
 
 body {
@@ -16,4 +17,8 @@ body {
 
 .background-light-blue {
   background-color: var(--badge-light-blue);
+}
+
+.background-dark-blue {
+  background-color: var(--badge-dark-blue) !important;
 }
