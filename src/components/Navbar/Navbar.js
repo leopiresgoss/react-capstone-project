@@ -1,5 +1,5 @@
 import { Navbar } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import './navbar.css';
@@ -7,6 +7,13 @@ import Search from './Search';
 
 const Nav = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  let countryName = '';
+
+  if (pathname !== '/') {
+    [countryName] = pathname.match(/\w+$/gi);
+  }
+
   const style = {
     backgroundColor: '#4369b2',
   };
@@ -19,7 +26,15 @@ const Nav = () => {
       >
         <FontAwesomeIcon icon={faAngleLeft} />
       </button>
-      <Search />
+      {pathname === '/' && (
+        <Search />
+      )}
+      {pathname !== '/' && (
+        <h6 className="text-white m-0">
+          {countryName}
+          /data
+        </h6>
+      )}
       <div className="moreButtons m-0 previous-page bg-transparent text-white h6 align-center d-flex gap-4">
         <FontAwesomeIcon icon={faMicrophone} />
         <FontAwesomeIcon icon={faGear} />
