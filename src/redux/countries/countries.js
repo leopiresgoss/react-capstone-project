@@ -1,9 +1,9 @@
 import fetchCountriesData from '../../services/fetchCountriesData';
 
 // Actions
-const GET_COUNTRIES = 'GET_COUNTRIES';
-const ORDER_BY_DEATHS = 'ORDER_BY_DEATHS';
-const ORDER_BY_CASES = 'ORDER_BY_CASES';
+export const GET_COUNTRIES = 'GET_COUNTRIES';
+export const ORDER_BY_DEATHS = 'ORDER_BY_DEATHS';
+export const ORDER_BY_CASES = 'ORDER_BY_CASES';
 
 // Reducer
 export default function reducer(state = [], action) {
