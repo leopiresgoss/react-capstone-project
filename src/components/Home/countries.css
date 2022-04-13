@@ -1,0 +1,11 @@
+.cards {
+  display: grid;
+  padding: 0 !important;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards .card {
+  padding: 8px;
+  background-color: var(--card-dark-blue) !important;
+  border-radius: 0;
+}

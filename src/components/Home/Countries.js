@@ -5,6 +5,7 @@ import Order from './Order';
 import Header from './Header';
 import { orderByDeaths } from '../../redux/countries/countries';
 import { clearSearch } from '../../redux/search/search';
+import './countries.css';
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -40,11 +41,21 @@ const Countries = () => {
       <Header countries={countries} />
       <Order handleListChange={handleListChange} order={order} />
       <ul className="cards">
-        {filteredCountries.length === 0 && (countries.map((country) => (
-          <Country key={country.id} data={country} order={order} />
+        {filteredCountries.length === 0 && (countries.map((country, index) => (
+          <Country
+            key={country.id}
+            data={country}
+            order={order}
+            index={index + 1}
+          />
         )))}
-        {filteredCountries.length !== 0 && (filteredCountries.map((country) => (
-          <Country key={country.id} data={country} order={order} />
+        {filteredCountries.length !== 0 && (filteredCountries.map((country, index) => (
+          <Country
+            key={country.id}
+            data={country}
+            order={order}
+            index={index + 1}
+          />
         )))}
       </ul>
     </>

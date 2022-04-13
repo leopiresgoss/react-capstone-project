@@ -8,6 +8,12 @@
 :root {
   --badge-light-blue: #5889e5;
   --badge-dark-blue: #2e4475;
+  --card-dark-blue: #3d63a4;
+  --card-light-blue: #4268af;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 body {
