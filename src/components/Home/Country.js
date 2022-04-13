@@ -14,7 +14,7 @@ const Country = (props) => {
   return (
     <li className="card">
       <Link to={href} className="text-white">
-        <div className="text-end mb-3">
+        <div className="text-end mb-5">
           <ArrowIcon />
         </div>
         <h3 className="font-lato fw-bold text-end mt-5">
@@ -23,19 +23,19 @@ const Country = (props) => {
           {name}
         </h3>
         {order === 'deaths' && (
-        <p className="text-end">
+        <p className="text-end m-0">
           {totalNewDeaths}
         </p>
         )}
 
         {order === 'cases' && (
-        <p>
+        <p className="text-end m-0">
           {totalNewCases}
         </p>
         )}
 
         {order === 'filter' && (
-        <p>
+        <p className="text-end m-0">
           {totalNewDeaths}
         </p>
         )}

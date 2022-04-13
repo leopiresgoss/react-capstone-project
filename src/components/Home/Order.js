@@ -66,7 +66,7 @@ const Order = (props) => {
 
   return (
     <div className="filter-box d-flex gap-1 background-dark-blue align-center px-4 py-1">
-      <h6 className="d-grid align-content-center text-white m-0 font-lato fw-bold">ORDER BY:</h6>
+      <h6 className="d-grid align-content-center text-white m-0 font-lato fw-bold">ORDER BY</h6>
       <Select
         placeholder="Order by"
         value={options.find((option) => option.value === selectedValue)}

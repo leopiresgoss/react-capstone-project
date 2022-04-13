@@ -15,7 +15,7 @@ const Details = () => {
           { width: '50%' }
         }
         />
-        <h2 className="text-white text-end d-grid align-content-center m-0">
+        <h2 className="text-white text-end d-grid align-content-center m-0 font-lato fw-bold">
           Statistics:
           {' '}
           {name}
