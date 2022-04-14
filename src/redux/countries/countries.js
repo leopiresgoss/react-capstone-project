@@ -9,7 +9,8 @@ export const ORDER_BY_CASES = 'ORDER_BY_CASES';
 export default function reducer(state = [], action) {
   switch (action.type) {
     case GET_COUNTRIES:
-      return action.payload.sort((a, b) => Number(b.totalNewDeaths) - Number(a.totalNewDeaths));
+      return action
+        .payload.slice().sort((a, b) => Number(b.totalNewDeaths) - Number(a.totalNewDeaths));
     case ORDER_BY_DEATHS:
       return state.slice().sort((a, b) => Number(b.totalNewDeaths) - Number(a.totalNewDeaths));
     case ORDER_BY_CASES:
