@@ -1,6 +1,6 @@
 // Actions
-const SEARCH_COUNTRY = 'SEARCH_COUNTRY';
-const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const SEARCH_COUNTRY = 'SEARCH_COUNTRY';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 // Reducer
 export default function reducer(state = '', action) {
