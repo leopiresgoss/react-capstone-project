@@ -1,0 +1,11 @@
+.cards {
+  display: grid;
+  padding: 0 !important;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards .card {
+  padding: 8px;
+  border-radius: 0;
+  background: url('../../images/covid-img-mobile.png') 50% 2%  / 5rem 5rem no-repeat, var(--card-dark-blue) !important;
+}

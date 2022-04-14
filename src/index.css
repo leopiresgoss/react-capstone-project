@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Gill Sans';
+  src:
+    local('GILLSANS'),
+    url('./fonts/GILLSANS.woff') format('woff'),
+    url('./fonts/GILLSANS.ttf') format('truetype');
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --badge-light-blue: #5889e5;
+  --badge-dark-blue: #2e4475;
+  --card-dark-blue: #3d63a4;
+  --card-light-blue: #4268af;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+body {
+  font-family: 'Gill Sans', sans-serif !important;
+  min-height: 100vh;
+  background-color: var(--badge-light-blue) !important;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.background-light-blue {
+  background-color: var(--badge-light-blue);
+}
+
+.background-dark-blue {
+  background-color: var(--badge-dark-blue) !important;
+}
